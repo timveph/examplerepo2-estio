@@ -1,0 +1,11 @@
+all:
+  children:
+    bazinga:
+      hosts:
+        172.31.44.207:
+  
+  vars:
+    ansible_user: ubuntu
+    ansible_ssh_private_key_file: "/home/ubuntu/.ssh/myKey"
+    ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
+

@@ -1,0 +1,19 @@
+- hosts: localhost
+  become: yes
+  roles:
+
+    - env
+    - nginx
+    - python
+    - running
+    
+
+
+     
+
+    
+    
+    
+
+    
+  

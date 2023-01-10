@@ -1,0 +1,27 @@
+---
+
+- name: create app.service file
+  shell: touch /etc/systemd/system/app.service
+
+- name: write to app.service file
+  ansible.builtin.blockinfile:
+    path: /etc/systemd/system/app.service
+    block: |
+      [Unit]
+      Description=My test service
+      After=multi-user.target
+      [Service]
+      Type=simple
+      Restart=always
+      ExecStart=/usr/bin/python3 /home/ubuntu/BirthDateAppFlask/app.py
+      [Install]
+      WantedBy=multi-user.target
+
+- name: Install python pip
+  ansible.builtin.apt:
+    name: python3-pip
+
+- name: Install multi python packages
+  ansible.builtin.pip:
+    name:
+      - Flask
