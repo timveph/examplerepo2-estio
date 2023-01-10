@@ -7,7 +7,7 @@ http {
       listen 80;
       server_name $public_ip;
       location / {
-          proxy_pass http://3.8.119.98/:5000;
+          proxy_pass http://$public_ip/:5000;
       }
     }
 }
